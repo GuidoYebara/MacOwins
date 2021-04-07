@@ -14,9 +14,7 @@ namespace MacOwins
     /// La clase representa una venta, con su codigo, fecha, el metodo de pago
     /// empleado, la cantidad de cuottas y el preciototal que se calcula con 
     /// el metodo CalcularPrecio.
-    /// Cada venta tiene asociada una lista de prendas que se vendieron en la misma.
-    /// A modo de simplificar el escenario, los codigos pueden repetirse, lo que significaria que esa prenda se vendio
-    /// mas de una vez. 
+    /// Cada venta tiene asociada una lista de lineas factura.
     /// </summary>
     public class Venta
     {
@@ -26,20 +24,21 @@ namespace MacOwins
         public int metodopago { get; set; }
         public int cantidaddecuotas { get; set; }
         public float preciototal { get; set; }
-        public List<Prenda> lista_prendasenvta { get; set; }
+        public float coeficientefijo { get; set; }
+        public List<LineaFactura> lineasfactura { get; set; }
 
         public Venta()
         {
-            lista_prendasenvta = new List<Prenda>();
-
-            ///En estas lineas, los datos fecha, codigoVta, metodopago, cantidadcuotas
-            ///seria completado.
-
+            lineasfactura = new List<LineaFactura>();
+            ///Completar datos de la venta como cantidaddecuotas, metodo y coef. fijo.
             AgregarPrendasAVenta();
 
             CalcularPrecio();
         }
 
+        /// <summary>
+        /// Agrega los productos que son parte de una venta mediante el agregado de lineas de factura
+        /// </summary>
         public void AgregarPrendasAVenta()
         {
             /* PseudoCodigo
@@ -47,12 +46,17 @@ namespace MacOwins
              pedir al usuario ingreso de prendas
              mientras usuario ingrese un codigo, y no valor 'continuar'
                  usuario ingresa codigo de prenda
-                 ACLARACION: el codigo deberia validarse en la lista de prendas disponibles
-                y copiar las instancias a esta lista. A modo de simplifar el modelo,
-                no se representará dicho escenario.
-                 guardar codigo en lista 'prendas'
-             terminar*/
+                 usuario completa todos los campos de una prenda
+                 usuario ingresa la cantidad vendida para esa prenda en esta venta
+                 se crea una linea de factura, y se le asocia la prenda creada, con la cantidad
+                 se agrega la linea creada a la lista lineasfactura
 
+             terminar
+
+            ACLARACION: sería prudente que el codigo se validara en la lista de prendas disponibles, pero
+                    no está contemplado en el enunciado.
+
+                */
         }
 
         /// <summary>
@@ -61,13 +65,15 @@ namespace MacOwins
         /// constructor de la clase, ya que es mandatorio que toda venta tenga su precio total.
         /// Pero también puede ser llamado en cualquier momento para actualizar el precio.
         /// </summary>
-        public void CalcularPrecio() {
+        public void CalcularPrecio() 
+        {
 
-            /*
+            /* PseudoCodigo
             
-            por cada codigo de prenda en lista 'prendas':
-                traer precio base de la prenda
+            por cada linea de factura en lineas factura
+                traer precio base de la prenda asociada a la linea
                 traer estado de la prenda
+             
                 si el estado es nueva:
                         precio=preciobase
                 si el estado es promocion:
@@ -75,8 +81,9 @@ namespace MacOwins
                         precio=preciobase-valoringresado
                 si el estado es liquidacio:
                         precio=preciobase*0.5
-                preciototal+=precio
-               
+
+                traer la cantidad de la linea factura
+                preciototal+=precio*cantidad
             terminar
             
             pedir al usuario el metodo de pago

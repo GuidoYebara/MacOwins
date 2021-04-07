@@ -17,11 +17,11 @@
       <Method Name="Venta" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAQABAEAAAAAAAAAAAAAAAQAAAAAQAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAQAQABAEAAAAAAAAAAAAACAAAAAAAQABAAAgA=</HashCode>
       <FileName>Venta.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
-      <Property Name="lista_prendasenvta" />
+      <Property Name="lineasfactura" />
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="MacOwins.Prenda">
@@ -30,6 +30,16 @@
       <HashCode>AAAQHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Prenda.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="MacOwins.LineaFactura">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LineaFactura.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="prenda" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

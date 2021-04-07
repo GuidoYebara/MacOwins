@@ -11,6 +11,10 @@ namespace MacOwins
     /// </summary>
     public class MacOwins
     {
+        /// <summary>
+        /// Agregado al escenario. La tienda deberia tener un listado de prendas disponibles
+        /// Las ventas tienen que sacar los codigos de prendas y la info. de esta lista.
+        /// </summary>
         public List<Prenda> lista_prendasdisponibles { get; set; }
 
         public List<Venta> lista_ventas { get; set; }
@@ -36,6 +40,10 @@ namespace MacOwins
             return ganancias;
         }
 
+        /// <summary>
+        /// Agregado al escenario. El vendedor puede ver la info. de cualquier prenda disponible.
+        /// </summary>
+        /// <param name="codigoprendaingresado"></param>
         public void MostrarPrenda(int codigoprendaingresado)
         {
             /*pseudocodigo
