@@ -9,6 +9,15 @@ namespace MacOwins
         efectivo = 1,
         tarjeta = 2
     }
+
+    /// <summary>
+    /// La clase representa una venta, con su codigo, fecha, el metodo de pago
+    /// empleado, la cantidad de cuottas y el preciototal que se calcula con 
+    /// el metodo CalcularPrecio.
+    /// Cada venta tiene asociada una lista de prendas que se vendieron en la misma.
+    /// A modo de simplificar el escenario, los codigos pueden repetirse, lo que significaria que esa prenda se vendio
+    /// mas de una vez. 
+    /// </summary>
     public class Venta
     {
 
@@ -22,6 +31,13 @@ namespace MacOwins
         public Venta()
         {
             lista_prendasenvta = new List<Prenda>();
+
+            ///En estas lineas, los datos fecha, codigoVta, metodopago, cantidadcuotas
+            ///seria completado.
+
+            AgregarPrendasAVenta();
+
+            CalcularPrecio();
         }
 
         public void AgregarPrendasAVenta()
@@ -31,10 +47,20 @@ namespace MacOwins
              pedir al usuario ingreso de prendas
              mientras usuario ingrese un codigo, y no valor 'continuar'
                  usuario ingresa codigo de prenda
+                 ACLARACION: el codigo deberia validarse en la lista de prendas disponibles
+                y copiar las instancias a esta lista. A modo de simplifar el modelo,
+                no se representará dicho escenario.
                  guardar codigo en lista 'prendas'
              terminar*/
 
         }
+
+        /// <summary>
+        /// Calcula el precio total con todas las consideraciones del enunciado, 
+        /// y lo guarda en la propiedad preciototal. El método es llamado por el 
+        /// constructor de la clase, ya que es mandatorio que toda venta tenga su precio total.
+        /// Pero también puede ser llamado en cualquier momento para actualizar el precio.
+        /// </summary>
         public void CalcularPrecio() {
 
             /*
