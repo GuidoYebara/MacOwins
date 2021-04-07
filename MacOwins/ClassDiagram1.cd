@@ -1,2 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MacOwins.MacOwins">
+    <Position X="1.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAEAAAAAAAAAAAAAAAAQIAAAAAA=</HashCode>
+      <FileName>MacOwins.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="lista_ventas" />
+      <Property Name="lista_prendasdisponibles" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MacOwins.Venta">
+    <Position X="0.75" Y="4.5" Width="2" />
+    <Members>
+      <Method Name="Venta" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAQABAEAAAAAAAAAAAAAAAQAAAAAQAAAAAgA=</HashCode>
+      <FileName>Venta.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="lista_prendasenvta" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MacOwins.Prenda">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Prenda.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
