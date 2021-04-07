@@ -1,6 +1,6 @@
 Requerimientos del proyecto MacOwins:
 
-	1)	Se desea saber el precio de venta de UNA prenda y su tipo.
+	1)	Se desea saber el precio de una venta.
 	2)	Hay distintos tipos de prenda. Estos son sacos, pantalones y camisas.
 	3)	Hay distintos estados de prenda: nueva, promoción y liquidación.
 	3)	El cálculo del precio depende del precio base y el estado.
